@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import studentImage from '../../public/ProfileImage.png'
 
 const stats = [
   { label: 'Coding experience', value: '4 months' },
@@ -71,23 +72,41 @@ export default function HeroSection() {
         transition={{ duration: 0.9, ease: 'easeOut' }}
         className="grid gap-6"
       >
-        <div className="rounded-[2rem] border border-slate-200/80 bg-slate-950/95 p-6 text-white shadow-xl">
-          <div className="flex items-center justify-between gap-4 rounded-[1.75rem] bg-gradient-to-r from-[#FEBA08] via-[#F59E0B] to-[#C97500] px-4 py-3 text-sm font-semibold text-slate-950">
-            <span>Featured student spotlight</span>
-            <span className="rounded-full bg-white/90 px-3 py-1 text-xs uppercase tracking-[0.35em] text-slate-950">New</span>
-          </div>
-          <div className="mt-6 space-y-4">
-            <div className="h-52 rounded-[1.75rem] bg-gradient-to-br from-[#FCD77F] via-[#F29C21] to-[#D97812] p-4">
-              <div className="flex h-full items-end justify-center">
-                <div className="rounded-full border-4 border-white/90 bg-slate-950/90 px-4 py-3 text-sm font-semibold text-white">Student Portfolio</div>
-              </div>
-            </div>
-            <div className="rounded-[1.75rem] bg-white/10 p-4">
-              <p className="text-xs uppercase tracking-[0.35em] text-slate-300">School</p>
-              <p className="mt-2 text-lg font-semibold text-white">Still I Rise International School</p>
-            </div>
-          </div>
+       <div className="rounded-[2rem] border border-slate-200/80 bg-slate-950/95 p-6 text-white shadow-xl">
+  <div className="flex items-center justify-between gap-4 rounded-[1.75rem] bg-gradient-to-r from-[#FEBA08] via-[#F59E0B] to-[#C97500] px-4 py-3 text-sm font-semibold text-slate-950">
+    <span>Featured student spotlight</span>
+    <span className="rounded-full bg-white/90 px-3 py-1 text-xs uppercase tracking-[0.35em] text-slate-950">
+      New
+    </span>
+  </div>
+
+  <div className="mt-6 space-y-4">
+    <div className="relative h-52 overflow-hidden rounded-[1.75rem]">
+      <img
+        src="/ProfileImage.png"
+        alt="Fatuma Tahir"
+        className="h-full w-full object-cover transition duration-700 hover:scale-105"
+      />
+
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
+
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+        <div className="rounded-full border-4 border-white/90 bg-slate-950/90 px-4 py-3 text-sm font-semibold text-white">
+          Student Portfolio
         </div>
+      </div>
+    </div>
+
+    <div className="rounded-[1.75rem] bg-white/10 p-4">
+      <p className="text-xs uppercase tracking-[0.35em] text-slate-300">
+        School
+      </p>
+      <p className="mt-2 text-lg font-semibold text-white">
+        Still I Rise International School
+      </p>
+    </div>
+  </div>
+</div>
 
         <div className="rounded-[2rem] border border-slate-200/80 bg-[#FEF6E7] p-6 shadow-sm">
           <p className="text-sm uppercase tracking-[0.35em] text-slate-500">Recent progress</p>
