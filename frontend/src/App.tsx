@@ -1,16 +1,16 @@
-import { lazy, Suspense, useMemo } from 'react'
+import { useMemo } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import CommandPalette from './components/CommandPalette'
-import CanvasScene from './components/CanvasScene'
+import CustomCursor from './components/CustomCursor'
+import ThemeToggle from './components/ThemeToggle'
 import HeroSection from './sections/HeroSection'
 import AboutSection from './sections/AboutSection'
 import SkillsSection from './sections/SkillsSection'
+import ProjectsSection from './sections/ProjectsSection'
+import ExperienceSection from './sections/ExperienceSection'
+import TestimonialsSection from './sections/TestimonialsSection'
 import ContactSection from './sections/ContactSection'
 import { navItems } from './data/portfolio'
-
-const ProjectsSection = lazy(() => import('./sections/ProjectsSection'))
-const ExperienceSection = lazy(() => import('./sections/ExperienceSection'))
-const TestimonialsSection = lazy(() => import('./sections/TestimonialsSection'))
 
 function App() {
   const pageMotion = useMemo(
@@ -23,26 +23,27 @@ function App() {
   )
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-black text-white">
-      <CanvasScene />
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.08),_transparent_28%),radial-gradient(circle_at_bottom,_rgba(255,255,255,0.04),_transparent_30%)]" />
-      <div className="pointer-events-none fixed inset-0 bg-[linear-gradient(180deg,_rgba(255,255,255,0.03),_transparent_30%,_rgba(255,255,255,0.03))]" />
+    <div className="min-h-screen bg-[#05060E] text-white">
+      <CustomCursor />
+      <ThemeToggle />
       <CommandPalette items={navItems} />
       <AnimatePresence mode="wait">
-        <motion.main
-          key="portfolio-app"
-          {...pageMotion}
-          className="relative mx-auto flex min-h-screen max-w-7xl flex-col gap-24 px-6 py-8 sm:px-8 lg:px-12"
-        >
-          <HeroSection />
-          <AboutSection />
-          <SkillsSection />
-          <Suspense fallback={<div className="py-16 text-center text-sm text-silver">Loading portfolio sections...</div>}>
-            <ProjectsSection />
-            <ExperienceSection />
-            <TestimonialsSection />
-            <ContactSection />
-          </Suspense>
+        <motion.main key="portfolio-app" {...pageMotion} className="relative mx-auto min-h-screen max-w-[1440px] px-4 py-10 sm:px-6 lg:px-8">
+          <div className="overflow-visible rounded-[1.5rem]">
+            <div className="mx-auto max-w-[1440px] px-6">
+              <div className="glass-card overflow-hidden rounded-[2.25rem] shadow-glow">
+                <HeroSection />
+                <div className="grid gap-16 px-6 py-10 sm:px-10 sm:py-12 lg:gap-20">
+                  <AboutSection />
+                  <SkillsSection />
+                  <ProjectsSection />
+                  <ExperienceSection />
+                  <TestimonialsSection />
+                  <ContactSection />
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.main>
       </AnimatePresence>
     </div>

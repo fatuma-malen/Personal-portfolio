@@ -11,6 +11,7 @@ export type SkillCategory = {
 
 export type Project = {
   title: string
+  tagline: string
   description: string
   tags: string[]
   impact: string
@@ -50,111 +51,99 @@ export const navItems: NavItem[] = [
 
 export const skillCategories: SkillCategory[] = [
   {
-    category: 'Frontend',
-    items: ['React', 'TypeScript', 'Tailwind', 'Framer Motion', 'React Three Fiber'],
-    proficiency: 94,
+    category: 'Web',
+    items: ['React', 'TypeScript', 'Tailwind', 'Vite', 'Responsive UI'],
+    proficiency: 92,
   },
   {
-    category: 'Backend',
-    items: ['Node.js', 'Express', 'NestJS', 'GraphQL', 'REST APIs'],
-    proficiency: 88,
+    category: 'AI',
+    items: ['Python', 'OpenAI', 'Prompt Design', 'Agent workflows', 'Data logic'],
+    proficiency: 84,
   },
   {
-    category: 'Databases',
-    items: ['PostgreSQL', 'MongoDB', 'Redis', 'Prisma', 'Supabase'],
-    proficiency: 86,
-  },
-  {
-    category: 'Cloud',
-    items: ['AWS', 'Vercel', 'Netlify', 'Docker', 'Terraform'],
-    proficiency: 82,
-  },
-  {
-    category: 'AI/ML',
-    items: ['Python', 'LangChain', 'OpenAI', 'Data Pipelines', 'Prompt Engineering'],
-    proficiency: 76,
-  },
-  {
-    category: 'DevOps',
-    items: ['CI/CD', 'GitHub Actions', 'Kubernetes', 'Monitoring', 'Observability'],
-    proficiency: 80,
+    category: 'Robotics',
+    items: ['Arduino', 'Sensors', 'Circuit design', 'Control logic', 'Prototyping'],
+    proficiency: 78,
   },
 ]
 
 export const projects: Project[] = [
   {
-    title: 'Aegis Studio',
-    description: 'A polished product experience for an enterprise SaaS launch, blending immersive motion with highly optimized modular architecture.',
-    tags: ['React', 'Tailwind', 'Vercel', 'GSAP'],
-    impact: 'Improved conversion velocity by 38% and reduced time-to-market through automated UI patterns.',
-    demo: 'https://aegis-studio.example.com',
-    repo: 'https://github.com/your-handle/aegis-studio',
+    title: 'AI Study Buddy',
+    tagline: 'Learning companion',
+    description: 'An intelligent study assistant that helps classmates organize tasks, review concepts, and generate quick study summaries with prompts tuned for students.',
+    tags: ['React', 'AI', 'Chatbot', 'Study tools'],
+    impact: 'Helped streamline daily study routines and turned hard school topics into clear, friendly explanations.',
+    demo: 'https://example.com/ai-study-buddy',
+    repo: 'https://github.com/fatuma-tahir/ai-study-buddy',
   },
   {
-    title: 'Nexa Finance',
-    description: 'A secure fintech dashboard with advanced data visualization, real-time sync, and accessible interactions for elite financial workflows.',
-    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'GraphQL'],
-    impact: 'Delivered a premium analytics platform used by teams across 4 regions with sub-second dashboard latency.',
-    demo: 'https://nexa-finance.example.com',
-    repo: 'https://github.com/your-handle/nexa-finance',
+    title: 'Child Guard Necklace',
+    tagline: 'Safety prototype',
+    description: 'A wearable tracking concept that combines sensors, alerts, and location-aware logic to support child safety and peace of mind for families.',
+    tags: ['IoT', 'Wearables', 'Safety', 'Prototype'],
+    impact: 'Demonstrated an early safety product idea for community use and hands-on robotics learning.',
+    demo: 'https://example.com/child-guard-necklace',
+    repo: 'https://github.com/fatuma-tahir/child-guard-necklace',
   },
   {
-    title: 'Luna Launch',
-    description: 'A launch campaign experience with cinematic scrolling, magnetic interactions, and storytelling-driven product case studies.',
-    tags: ['React', 'GSAP', 'R3F', 'Cloud'],
-    impact: 'Generated a 51% uplift in early access signups through refined motion and premium brand presentation.',
-    demo: 'https://luna-launch.example.com',
-    repo: 'https://github.com/your-handle/luna-launch',
+    title: 'Robotics Lab Dashboard',
+    tagline: 'Project tracker',
+    description: 'A dashboard for managing robotics builds, tracking parts, and visualizing project progress through a clean student-focused interface.',
+    tags: ['TypeScript', 'UI Design', 'Data', 'Productivity'],
+    impact: 'Organized team workflows and made robotics projects easier to manage for school teammates.',
+    demo: 'https://example.com/robotics-lab-dashboard',
+    repo: 'https://github.com/fatuma-tahir/robotics-lab-dashboard',
   },
 ]
 
 export const experienceTimeline: ExperienceItem[] = [
   {
-    title: 'Principal Software Engineer',
-    company: 'Apex Labs',
+    title: 'Grade 10 Developer',
+    company: 'Still I Rise International School',
     timeline: '2024 — Present',
-    description: 'Leading product engineering at the intersection of AI-driven platforms, developer experience, and cloud-native architecture.',
-    type: 'work',
-  },
-  {
-    title: 'Founding Engineer',
-    company: 'Verity Collective',
-    timeline: '2021 — 2024',
-    description: 'Built the core platform, launch systems, and observability pipelines that supported fast-paced growth and technical reliability.',
-    type: 'work',
-  },
-  {
-    title: 'M.S. Computer Science',
-    company: 'Stanford University',
-    timeline: '2019 — 2021',
-    description: 'Focused on distributed systems, human-centered AI, and product-focused design systems.',
+    description: 'Building AI and robotics projects as part of school innovation classes and extracurricular tech labs.',
     type: 'education',
+  },
+  {
+    title: 'AI Agent Research',
+    company: 'School innovation project',
+    timeline: '2024',
+    description: 'Designed an AI-agent workflow that supports study planning, quick concept recall, and research note generation.',
+    type: 'work',
+  },
+  {
+    title: 'Child Tracking Necklace',
+    company: 'Community safety prototype',
+    timeline: '2024',
+    description: 'Built a wearable idea using sensors and alerts to explore safer mobility for children and families.',
+    type: 'work',
   },
 ]
 
 export const testimonials: Testimonial[] = [
   {
-    name: 'Amina Ali',
-    role: 'CEO, Aegis Studio',
-    company: 'Aegis Studio',
-    quote: 'Their product leadership is impeccable—every interaction feels intentional, elegant, and built to scale.',
+    name: 'Ms. Amina Hussein',
+    role: 'Technology Teacher',
+    company: 'Still I Rise International School',
+    quote: 'Fatuma is a bright student with a natural curiosity for AI and robotics. Her projects feel practical, thoughtful, and full of energy.',
   },
   {
-    name: 'Michael Chen',
-    role: 'Head of Product',
-    company: 'Nexa Finance',
-    quote: 'A rare combination of technical excellence and polished design execution. Delivered faster than expected with premium quality.',
+    name: 'Eng. Hassan Ibrahim',
+    role: 'Robotics Mentor',
+    company: 'School Innovation Lab',
+    quote: 'She approaches each design challenge with care and a strong eye for how technology can support students and families.',
   },
   {
-    name: 'Sofia Ramos',
-    role: 'Founder',
-    company: 'Luna Launch',
-    quote: 'A visionary collaborator who turned complex product ambitions into a world-class digital experience.' ,
+    name: 'Ms. Leila Osman',
+    role: 'Classroom Coordinator',
+    company: 'Still I Rise International School',
+    quote: 'Fatuma’s work brings school learning to life. She quickly turns ideas into prototypes with great attention to detail.',
   },
 ]
 
 export const socialLinks: SocialLink[] = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/' },
-  { label: 'Github', href: 'https://github.com/' },
-  { label: 'Email', href: 'mailto:hello@example.com' },
+  { label: 'GitHub', href: 'https://github.com/fatuma-tahir' },
+  { label: 'Email', href: 'mailto:fatuma.tahir@example.com' },
 ]

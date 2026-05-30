@@ -1,55 +1,34 @@
-import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { experienceTimeline } from '../data/portfolio'
 import SectionHeading from '../components/SectionHeading'
 
-gsap.registerPlugin(ScrollTrigger)
-
 export default function ExperienceSection() {
-  const timelineRef = useRef<HTMLDivElement | null>(null)
-
-  useEffect(() => {
-    if (!timelineRef.current) return
-    const elements = timelineRef.current.querySelectorAll('.timeline-item')
-    gsap.from(elements, {
-      opacity: 0,
-      y: 36,
-      duration: 0.8,
-      stagger: 0.18,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: timelineRef.current,
-        start: 'top 85%',
-      },
-    })
-  }, [])
-
   return (
     <section id="experience" className="grid gap-10">
       <SectionHeading
         eyebrow="Experience"
-        title="A career built around premium products, deep technical systems, and team leadership."
-        description="From founding teams to enterprise scale, these milestones reflect a focus on elegant execution, strong engineering systems, and modern design-first products."
+        title="My learning journey, robotics builds, and student research milestones."
+        description="A short timeline of the school projects, AI work, and robotics challenges I’ve worked on so far."
       />
-      <div ref={timelineRef} className="space-y-8 rounded-[2rem] border border-white/10 bg-[#0D0D0D]/90 p-8 shadow-glow backdrop-blur-xl">
-        {experienceTimeline.map((event) => (
+      <div className="grid gap-6">
+        {experienceTimeline.map((event, index) => (
           <motion.article
             key={event.title}
-            className="timeline-item relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-black/50 p-6 shadow-xl"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.55, delay: index * 0.08 }}
+            className="rounded-[2rem] border border-slate-200/70 bg-white p-6 shadow-sm"
           >
-            <span className="absolute top-0 left-1/2 h-full w-px -translate-x-1/2 bg-white/5" />
-            <div className="relative z-10 grid gap-3 sm:grid-cols-[0.9fr_0.8fr] sm:items-center">
-              <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-silver">{event.timeline}</p>
-                <h3 className="mt-3 text-xl font-semibold text-white">{event.title}</h3>
-                <p className="mt-1 text-sm text-silver">{event.company}</p>
-              </div>
-              <p className="rounded-3xl border border-white/10 bg-white/5 p-5 text-sm leading-7 text-silver">
-                {event.description}
-              </p>
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <p className="text-xs uppercase tracking-[0.35em] text-[#C97500]">{event.timeline}</p>
+              <span className="rounded-full bg-slate-100 px-3 py-1 text-[11px] uppercase tracking-[0.35em] text-slate-700">
+                {event.type === 'education' ? 'Education' : 'Project'}
+              </span>
             </div>
+            <h3 className="mt-4 text-2xl font-semibold text-slate-950">{event.title}</h3>
+            <p className="mt-2 text-sm text-slate-600">{event.company}</p>
+            <p className="mt-4 text-base leading-7 text-slate-700">{event.description}</p>
           </motion.article>
         ))}
       </div>
