@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import studentImage from '../../public/ProfileImage.png'
 
 const stats = [
-  { label: 'Coding experience', value: '4 months' },
+  { label: 'Coding experience', value: '5 months' },
   { label: 'AI projects', value: '3 completed' },
   { label: 'Robotics builds', value: '2 prototypes' },
 ]
@@ -34,7 +34,7 @@ export default function HeroSection() {
             Hey there, I’m <span className="text-[#C97500]">Fatuma</span>
           </motion.h1>
           <p className="max-w-2xl text-lg leading-8 text-slate-600">
-            Grade 10 student developer at Still I Rise International School with 4 months of coding and robotics experience.
+            Grade 10 student developer at Still I Rise International School with 5 months of coding and robotics experience.
           </p>
           <p className="max-w-2xl text-base leading-7 text-slate-600">
             I build AI-powered learning tools, robotics prototypes, and polished student-facing web experiences. Recent projects include an AI-agent, an AI-powered child tracking necklace, and collaborative robotics designs.
